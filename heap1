@@ -1,0 +1,14 @@
+First, we should know about heap in assembly.
+And then, we know that there is a suspicious thing in strcopy,
+strcopy(destination, whattocopy)
+if we have doubke strcopy like :
+
+strcopy(destination, whattocopy)
+strcopy(destination, whattocopy)
+
+we can use the first strcopy to set the destionation of the second strcopy.
+This is the code that we use the first strcopy to overwrite the destination
+of the second strcopy and set an address to the winner method to the whattocopy
+of the second strcopy :
+
+"`/bin/echo -ne "AAAABBBBCCCCDDDDEEEE\x74\x97\x04\x08"`" "`/bin/echo -ne "\x94\x84\x04\x08"`"
